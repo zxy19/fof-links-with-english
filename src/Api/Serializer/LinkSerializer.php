@@ -28,6 +28,7 @@ class LinkSerializer extends AbstractSerializer
         return [
             'id'                  => $link->id,
             'title'               => $link->title,
+            'title_english'       => $link->title_english,
             'icon'                => $link->icon,
             'url'                 => $link->url,
             'position'            => $link->position,

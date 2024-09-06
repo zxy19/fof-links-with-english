@@ -4,7 +4,9 @@ export default class Link extends Model {
   title() {
     return Model.attribute<string>('title').call(this);
   }
-
+  title_english() {
+    return Model.attribute<string>('title_english').call(this);
+  }
   icon() {
     return Model.attribute<string>('icon').call(this);
   }

@@ -21,6 +21,7 @@ export default class EditlinksModal extends Modal {
     this.link = this.attrs.link || app.store.createRecord('links');
 
     this.itemTitle = Stream(this.link.title() || '');
+    this.itemTitleEnglish = Stream(this.link.title_english() || '');
     this.icon = Stream(this.link.icon() || '');
     this.url = Stream(this.link.url() || '');
     this.isInternal = Stream(this.link.isInternal() && true);
@@ -79,6 +80,16 @@ export default class EditlinksModal extends Modal {
       100
     );
 
+    items.add(
+      'title-english',
+      [
+        <div className="Form-group">
+          <label>{app.translator.trans('fof-links.admin.edit_link.title_label_english')}</label>
+          <input className="FormControl" placeholder={app.translator.trans('fof-links.admin.edit_link.title_placeholder')} bidi={this.itemTitleEnglish} />
+        </div>,
+      ],
+      100
+    );
     items.add(
       'icon',
       [
@@ -225,6 +236,7 @@ export default class EditlinksModal extends Modal {
   submitData() {
     return {
       title: this.itemTitle(),
+      title_english: this.itemTitleEnglish(),
       icon: this.icon(),
       url: this.url(),
       isInternal: this.isInternal(),

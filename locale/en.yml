@@ -19,6 +19,7 @@ fof-links:
       submit_button: => core.ref.save_changes
       title: => fof-links.ref.create_link
       title_label: => fof-links.ref.title
+      title_label_english: => fof-links.ref.title_en
       title_placeholder: => fof-links.ref.title
       icon_label: => core.ref.icon
       icon_text: => core.ref.icon_text
@@ -42,4 +43,5 @@ fof-links:
     create_link: Create Link
     links: Links
     title: Title
+    title_en: Title(English)
     url: URL

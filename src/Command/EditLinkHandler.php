@@ -66,6 +66,9 @@ class EditLinkHandler
         if (isset($attributes['title'])) {
             $link->title = $attributes['title'];
         }
+        if (isset($attributes['title_english'])) {
+            $link->title_english = $attributes['title_english'];
+        }
 
         if (isset($attributes['icon'])) {
             $link->icon = $attributes['icon'];

@@ -16,6 +16,7 @@ use Flarum\Database\AbstractModel;
 /**
  * @property int    $id
  * @property string $title
+ * @property string $title_english
  * @property string $icon
  * @property string $url
  * @property int    $position
@@ -53,11 +54,12 @@ class Link extends AbstractModel
      *
      * @return static
      */
-    public static function build($name, $icon, $url, $isInternal, $isNewtab, $visibility, $useRelMe = false)
+    public static function build($name,$title_english, $icon, $url, $isInternal, $isNewtab, $visibility, $useRelMe = false)
     {
         $link = new static();
 
         $link->title = $name;
+        $link->title_english = $title_english;
         $link->icon = $icon;
         $link->url = $url;
         $link->is_internal = (bool) $isInternal;

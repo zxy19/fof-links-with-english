@@ -17,7 +17,13 @@ export interface ILinkItemAttrs extends IButtonAttrs {
   inDropdown?: boolean;
   isDropdownButton?: boolean;
 }
-
+function chooseTitle(link: LinkModel) {
+  if (app.translator.getLocale() === "en") {
+    return link.title_english();
+  } else {
+    return link.title();
+  }
+}
 export default class LinkItem extends LinkButton {
   // Just definitions to satisfy TypeScript
   attrs!: ILinkItemAttrs;
@@ -47,7 +53,7 @@ export default class LinkItem extends LinkButton {
           data-toggle={this.attrs.isDropdownButton ? 'dropdown' : undefined}
         >
           {this.icon}
-          <span className="LinksButton-title">{link.title()}</span>
+          <span className="LinksButton-title">{chooseTitle(link)}</span>
         </LinkLabelNode>
         {this.attrs.inDropdown && <Separator />}
       </>
