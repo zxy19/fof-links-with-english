@@ -19,7 +19,7 @@ export interface ILinkItemAttrs extends IButtonAttrs {
 }
 function chooseTitle(link: LinkModel) {
   if (app.translator.getLocale() === "en") {
-    return link.title_english();
+    return link.title_english() || link.title();
   } else {
     return link.title();
   }
