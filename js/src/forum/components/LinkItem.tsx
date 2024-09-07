@@ -74,7 +74,7 @@ export default class LinkItem extends LinkButton {
     return (
       <Link {...linkAttrs}>
         {this.icon}
-        <span className="LinksButton-title">{link.title()}</span>
+        <span className="LinksButton-title">{chooseTitle(link)}</span>
       </Link>
     );
   }
